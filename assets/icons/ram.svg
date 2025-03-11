@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <style>
+    .ram-blue { fill: #2B6CB0; }
+    .ram-light { fill: #4299E1; }
+  </style>
+  
+  <!-- RAM stick -->
+  <rect class="ram-blue" x="4" y="10" width="24" height="12" rx="1" ry="1" />
+  
+  <!-- Chips -->
+  <rect class="ram-light" x="6" y="12" width="4" height="8" rx="1" ry="1" />
+  <rect class="ram-light" x="12" y="12" width="4" height="8" rx="1" ry="1" />
+  <rect class="ram-light" x="18" y="12" width="4" height="8" rx="1" ry="1" />
+  <rect class="ram-light" x="24" y="12" width="2" height="8" rx="1" ry="1" />
+  
+  <!-- Connectors -->
+  <rect fill="#333" x="5" y="22" width="2" height="2" />
+  <rect fill="#333" x="9" y="22" width="2" height="2" />
+  <rect fill="#333" x="13" y="22" width="2" height="2" />
+  <rect fill="#333" x="17" y="22" width="2" height="2" />
+  <rect fill="#333" x="21" y="22" width="2" height="2" />
+  <rect fill="#333" x="25" y="22" width="2" height="2" />
+</svg> 

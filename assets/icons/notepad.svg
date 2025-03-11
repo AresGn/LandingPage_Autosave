@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <style>
+    .notepad-gray { fill: #5A5A5A; }
+    .notepad-blue { fill: #2B6CB0; }
+  </style>
+  
+  <!-- Notepad background -->
+  <rect class="notepad-gray" x="4" y="2" width="24" height="28" rx="2" ry="2" />
+  
+  <!-- Paper -->
+  <rect fill="white" x="6" y="4" width="20" height="24" rx="1" ry="1" />
+  
+  <!-- Text lines -->
+  <line x1="9" y1="10" x2="23" y2="10" stroke="#CCCCCC" stroke-width="1" />
+  <line x1="9" y1="14" x2="23" y2="14" stroke="#CCCCCC" stroke-width="1" />
+  <line x1="9" y1="18" x2="23" y2="18" stroke="#CCCCCC" stroke-width="1" />
+  <line x1="9" y1="22" x2="18" y2="22" stroke="#CCCCCC" stroke-width="1" />
+</svg> 

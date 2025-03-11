@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <style>
+    .vscode-blue { fill: #007ACC; }
+  </style>
+  
+  <!-- VS Code logo -->
+  <path class="vscode-blue" d="M29,2.5l-9,3.4L8,2.5L3,5v22l5,2.5l12-4.4l9,3.4l3-2.5V5L29,2.5z M8,21.9V10.1l8,5.9L8,21.9z" />
+  
+  <!-- Inner details -->
+  <path fill="white" opacity="0.3" d="M8,21.9l12-5.9l9,3.4V10.6l-9,3.4l-12-5.9V21.9z" />
+</svg> 

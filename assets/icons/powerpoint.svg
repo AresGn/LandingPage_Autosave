@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <style>
+    .ppt-orange { fill: #D24726; }
+  </style>
+  
+  <!-- Document background -->
+  <rect class="ppt-orange" x="2" y="2" width="28" height="28" rx="2" ry="2" />
+  
+  <!-- P letter -->
+  <path fill="white" d="M8,8h8c2.2,0,4,1.8,4,4s-1.8,4-4,4h-4v8h-4V8z M12,12v4h4c0,0,0-4-4-4z" />
+</svg> 
