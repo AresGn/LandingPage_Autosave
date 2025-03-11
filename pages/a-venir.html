@@ -194,7 +194,10 @@
             <p class="feature-request__intro">Vous souhaitez qu'AutoSavePro prenne en charge une application spécifique ou intègre une nouvelle fonctionnalité ? Faites-nous part de vos idées !</p>
             
             <div class="feature-request__form-container">
-                <form id="featureRequestForm" class="feature-request__form" action="#" method="POST">
+                <form id="featureRequestForm" class="feature-request__form" action="https://formsubmit.co/votre@email.com" method="POST">
+                    <input type="hidden" name="_next" value="https://votresite.com/merci.html">
+                    <input type="hidden" name="_subject" value="Nouvelle demande de fonctionnalité - AutoSavePro">
+                    <input type="hidden" name="_captcha" value="true">
                     <div class="form-group">
                         <label for="name" class="form-label">Nom</label>
                         <input type="text" id="name" name="name" class="form-input" required>
