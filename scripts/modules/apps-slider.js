@@ -9,17 +9,19 @@ export function initAppsSlider() {
     const track = slider.querySelector('.apps-slider__track');
     const slides = slider.querySelectorAll('.app-slide');
     const dotsContainer = slider.querySelector('.apps-slider__dots');
-    const prevButton = slider.querySelector('.apps-slider__control--prev');
-    const nextButton = slider.querySelector('.apps-slider__control--next');
     
     let currentIndex = 0;
     let slidesPerView = 3;
     let slideWidth = 100 / slidesPerView;
     let touchStartX = 0;
     let touchEndX = 0;
+    let autoplayInterval;
+    let isAnimating = false;
     
     // Initialisation
     function init() {
+        console.log("Initialisation du slider d'applications...");
+        
         // Déterminer le nombre de slides visibles en fonction de la largeur de l'écran
         updateSlidesPerView();
         
@@ -31,6 +33,11 @@ export function initAppsSlider() {
         
         // Ajouter les écouteurs d'événements
         addEventListeners();
+        
+        // Démarrer l'autoplay
+        startAutoplay();
+        
+        console.log("Slider d'applications initialisé avec succès!");
     }
     
     // Mettre à jour le nombre de slides visibles en fonction de la largeur de l'écran
@@ -49,11 +56,18 @@ export function initAppsSlider() {
             slide.style.flex = `0 0 ${slideWidth}%`;
             slide.style.minWidth = `${slideWidth}%`;
         });
+        
+        console.log(`Slides par vue: ${slidesPerView}, Largeur de slide: ${slideWidth}%`);
     }
     
     // Créer les points de navigation
     function createDots() {
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = ''; // Vider le conteneur avant de créer les points
+        
         const totalDots = Math.ceil(slides.length / slidesPerView);
+        console.log(`Création de ${totalDots} points de navigation`);
         
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('button');
@@ -66,6 +80,7 @@ export function initAppsSlider() {
             
             dot.addEventListener('click', () => {
                 goToSlide(i * slidesPerView);
+                resetAutoplay();
             });
             
             dotsContainer.appendChild(dot);
@@ -74,27 +89,49 @@ export function initAppsSlider() {
     
     // Mettre à jour la position des slides
     function updateSlidePositions() {
+        // Appliquer la transformation au track
         track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        console.log(`Déplacement du track à: -${currentIndex * slideWidth}%`);
         
         // Mettre à jour les points de navigation
-        const dots = dotsContainer.querySelectorAll('.apps-slider__dot');
-        const activeDotIndex = Math.floor(currentIndex / slidesPerView);
-        
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeDotIndex);
-        });
+        if (dotsContainer) {
+            const dots = dotsContainer.querySelectorAll('.apps-slider__dot');
+            const activeDotIndex = Math.floor(currentIndex / slidesPerView);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
+            });
+        }
     }
     
     // Aller à un slide spécifique
     function goToSlide(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+        
         const maxIndex = slides.length - slidesPerView;
         currentIndex = Math.max(0, Math.min(index, maxIndex));
+        
+        console.log(`Déplacement au slide ${currentIndex}`);
         updateSlidePositions();
+        
+        // Permettre une nouvelle animation après la transition
+        setTimeout(() => {
+            isAnimating = false;
+        }, 800); // Correspond à la durée de transition CSS
     }
     
     // Aller au slide suivant
     function goToNextSlide() {
-        goToSlide(currentIndex + slidesPerView);
+        let nextIndex = currentIndex + slidesPerView;
+        
+        // Revenir au début si on atteint la fin
+        if (nextIndex >= slides.length - slidesPerView + 1) {
+            nextIndex = 0;
+        }
+        
+        console.log(`Déplacement au slide suivant: ${nextIndex}`);
+        goToSlide(nextIndex);
     }
     
     // Aller au slide précédent
@@ -102,16 +139,45 @@ export function initAppsSlider() {
         goToSlide(currentIndex - slidesPerView);
     }
     
+    // Démarrer l'autoplay
+    function startAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
+        
+        console.log("Démarrage de l'autoplay");
+        autoplayInterval = setInterval(() => {
+            if (!isAnimating) {
+                goToNextSlide();
+            }
+        }, 3000); // Changer de slide toutes les 3 secondes
+    }
+    
+    // Réinitialiser l'autoplay
+    function resetAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
+        startAutoplay();
+    }
+    
     // Ajouter les écouteurs d'événements
     function addEventListeners() {
-        // Boutons de navigation
-        prevButton.addEventListener('click', goToPrevSlide);
-        nextButton.addEventListener('click', goToNextSlide);
-        
         // Gestion du redimensionnement de la fenêtre
         window.addEventListener('resize', () => {
             updateSlidesPerView();
             updateSlidePositions();
+        });
+        
+        // Pause de l'autoplay au survol
+        slider.addEventListener('mouseenter', () => {
+            console.log("Pause de l'autoplay (survol)");
+            clearInterval(autoplayInterval);
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            console.log("Reprise de l'autoplay");
+            startAutoplay();
         });
         
         // Gestion du swipe sur mobile
@@ -137,9 +203,11 @@ export function initAppsSlider() {
         if (touchEndX < touchStartX - swipeThreshold) {
             // Swipe vers la gauche
             goToNextSlide();
+            resetAutoplay();
         } else if (touchEndX > touchStartX + swipeThreshold) {
             // Swipe vers la droite
             goToPrevSlide();
+            resetAutoplay();
         }
     }
     

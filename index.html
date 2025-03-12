@@ -78,7 +78,7 @@
                 <div class="feature-card">
                     <i class="fas fa-folder-open fa-3x"></i>
                     <h3>Sauvegarde Locale</h3>
-                    <p>Crée automatiquement une copie en temps réel dans Documents\SauvegardeAuto, pour récupérer vos fichiers même après suppression.</p>
+                    <p>Crée automatiquement une copie en temps réel dans Documents\AutoSavePro, pour récupérer vos fichiers même après suppression.</p>
                 </div>
             </div>
         </div>
@@ -156,15 +156,6 @@
                     </div>
                 </div>
                 
-                <div class="apps-slider__controls">
-                    <button class="apps-slider__control apps-slider__control--prev" aria-label="Application précédente">
-                        <span class="apps-slider__arrow apps-slider__arrow--left"></span>
-                    </button>
-                    <button class="apps-slider__control apps-slider__control--next" aria-label="Application suivante">
-                        <span class="apps-slider__arrow apps-slider__arrow--right"></span>
-                    </button>
-                </div>
-                
                 <div class="apps-slider__dots">
                     <!-- Les points de navigation seront générés par JavaScript -->
                 </div>
@@ -177,7 +168,10 @@
         <div class="container">
             <h2 class="section-title">Guide d'installation</h2>
             <div class="installation__video-container">
-                <iframe class="installation__video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Guide d'installation AutoSavePro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video class="installation__video" controls>
+                    <source src="tuto/installation-guide.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
                 <p class="installation__caption">Regardez notre guide vidéo pour une installation rapide et facile</p>
             </div>
         </div>
@@ -226,13 +220,13 @@
             <h2 class="section-title">TÉMOIGNAGES</h2>
             <p class="testimonials__intro">Ce que disent nos utilisateurs</p>
             <div class="testimonials__slider">
-                <div class="testimonials__track">
-                    <!-- Témoignage 1 -->
-                    <div class="testimonial">
-                        <div class="testimonials__quote">
+                <!-- Témoignage 1 -->
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__quote">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
-                        <div class="testimonials__text">
+                        <div class="testimonial__text">
                             <p>AutoSavePro m'a sauvé plusieurs fois lors de coupures de courant. Je ne peux plus m'en passer pour mon travail quotidien.</p>
                         </div>
                         <div class="testimonial__author">
@@ -245,13 +239,15 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Témoignage 2 -->
-                    <div class="testimonial">
-                        <div class="testimonials__quote">
+                <!-- Témoignage 2 -->
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__quote">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
-                        <div class="testimonials__text">
+                        <div class="testimonial__text">
                             <p>Une application simple mais indispensable. La configuration est intuitive et elle fonctionne parfaitement en arrière-plan.</p>
                         </div>
                         <div class="testimonial__author">
@@ -264,26 +260,72 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Témoignage 3 -->
-                    <div class="testimonial">
-                        <div class="testimonials__quote">
+                <!-- Témoignage 3 -->
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__quote">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
-                        <div class="testimonials__text">
-                            <p>Depuis que j'utilise AutoSavePro, je n'ai plus jamais perdu une seule ligne de code. L'intégration avec VS Code est parfaite.</p>
+                        <div class="testimonial__text">
+                            <p>Depuis que j'utilise AutoSavePro, je n'ai plus jamais perdu une seule ligne de code. L'intégration de VS Code est parfaite.</p>
                         </div>
                         <div class="testimonial__author">
                             <div class="testimonial__author-image">
                                 <img src="assets/images/testimonials/user3.svg" alt="Sophie M." loading="lazy">
                             </div>
                             <div class="testimonial__author-info">
-                                <h4 class="testimonial__author-name">Sophie M.</h4>
+                                <h4 class="testimonial__author-name">Julie M.</h4>
                                 <p class="testimonial__author-title">Développeuse Full Stack</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Témoignage 4 -->
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial__text">
+                            <p>En tant qu'étudiant en ingénierie, mes rapports de projet sont sauvegardés automatiquement. J'ai gagné en tranquillité d'esprit pour mes études.</p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-image">
+                                <img src="assets/images/testimonials/user4.svg" alt="Alexandre B." loading="lazy">
+                            </div>
+                            <div class="testimonial__author-info">
+                                <h4 class="testimonial__author-name">Angelino B.</h4>
+                                <p class="testimonial__author-title">Étudiant en ingénierie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 5 -->
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial__text">
+                            <p>Je gère une petite entreprise et tous nos documents comptables sont désormais protégés. AutoSavePro fait partie intégrante de notre stratégie de sécurité.</p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-image">
+                                <img src="assets/images/testimonials/user5.svg" alt="Nathalie P." loading="lazy">
+                            </div>
+                            <div class="testimonial__author-info">
+                                <h4 class="testimonial__author-name">Sylvère P.</h4>
+                                <p class="testimonial__author-title">Chef d'entreprise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials__dots"></div>
             </div>
         </div>
     </section>
@@ -317,7 +359,7 @@
                             </div>
                             <div class="contact-method__details">
                                 <h3 class="contact-method__title">Email</h3>
-                                <p class="contact-method__value">support@autosavepro.com</p>
+                                <p class="contact-method__value">autosavepro@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -326,13 +368,13 @@
                             </div>
                             <div class="contact-method__details">
                                 <h3 class="contact-method__title">Téléphone</h3>
-                                <p class="contact-method__value">+33 1 23 45 67 89</p>
+                                <p class="contact-method__value">+229 01 99 32 30 73</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact__form">
-                    <form id="contactForm" action="https://formsubmit.co/votre@email.com" method="POST">
+                    <form id="contactForm" action="https://formsubmit.co/aresgnimagnon0@gmail.com" method="POST">
                         <input type="hidden" name="_next" value="https://votresite.com/merci.html">
                         <input type="hidden" name="_subject" value="Nouveau message de contact - AutoSavePro">
                         <input type="hidden" name="_captcha" value="true">
@@ -385,9 +427,9 @@
                 <div class="footer__legal">
                     <h3 class="footer__title">Informations légales</h3>
                     <ul class="footer__list">
-                        <li><a href="pages/privacy-policy.html">Politique de confidentialité</a></li>
-                        <li><a href="pages/terms.html">Conditions d'utilisation</a></li>
-                        <li><a href="pages/license.html">Licence</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Licence</a></li>
                     </ul>
                 </div>
                 <div class="footer__social">
@@ -412,6 +454,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js" defer></script>
 </body>
 </html> 

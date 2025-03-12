@@ -9,6 +9,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/main.css">
     
@@ -84,7 +87,7 @@
                             <span class="faq__icon"></span>
                         </div>
                         <div class="faq__answer">
-                            <p>AutoSavePro propose une version gratuite avec des fonctionnalités de base et une version premium avec des fonctionnalités avancées. La version gratuite est suffisante pour la plupart des utilisateurs et n'a pas de limite de temps.</p>
+                            <p>Oui, AutoSavePro est totalement gratuit et open source ! Vous pouvez l'utiliser sans aucune restriction et pour une durée illimitée, que ce soit pour un usage personnel ou professionnel.</p>
                         </div>
                     </div>
 
@@ -100,7 +103,7 @@
                                 <li>Éditeurs de texte (Bloc-notes, WordPad, Visual Studio Code)</li>
                                 <li>Et bien d'autres applications courantes</li>
                             </ul>
-                            <p>La liste complète est disponible dans la documentation.</p>
+                            <p>De nouvelles applications seront ajoutées dans les prochaines versions. Consultez notre page "À venir" pour plus de détails !</p>
                         </div>
                     </div>
                 </div>
@@ -135,11 +138,17 @@
 
                     <div class="faq__item">
                         <div class="faq__question">
-                            <h3>Où sont stockées les sauvegardes ?</h3>
+                            <h3>Où sont stockées la copie des sauvegardes ?</h3>
                             <span class="faq__icon"></span>
                         </div>
                         <div class="faq__answer">
-                            <p>Par défaut, les sauvegardes sont stockées dans un dossier dédié dans vos Documents. Vous pouvez modifier cet emplacement dans les paramètres de l'application. Les sauvegardes sont organisées par application et par date pour faciliter la récupération.</p>
+                            <p>Les copies de sauvegarde sont stockées dans le dossier Documents\AutoSavePro sur votre ordinateur. Les fichiers sont organisés par application pour faciliter la récupération :</p>
+                            <ul>
+                                <li>Pour les documents Word : Documents\AutoSavePro\Microsoft Word</li>
+                                <li>Pour les fichiers VS Code : Documents\AutoSavePro\Visual Studio Code</li>
+                                <li>Et ainsi de suite pour chaque application supportée</li>
+                            </ul>
+                            <p>Vous pouvez modifier cet emplacement dans les paramètres de l'application si nécessaire.</p>
                         </div>
                     </div>
                 </div>
@@ -160,23 +169,6 @@
                                 <li>Ajustez l'intervalle de sauvegarde selon vos besoins</li>
                             </ol>
                             <p>Vous pouvez définir des intervalles différents pour différentes applications.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq__item">
-                        <div class="faq__question">
-                            <h3>Comment récupérer un fichier sauvegardé ?</h3>
-                            <span class="faq__icon"></span>
-                        </div>
-                        <div class="faq__answer">
-                            <p>Pour récupérer un fichier sauvegardé :</p>
-                            <ol>
-                                <li>Ouvrez AutoSavePro</li>
-                                <li>Cliquez sur "Historique des sauvegardes"</li>
-                                <li>Naviguez jusqu'à l'application et la date concernées</li>
-                                <li>Sélectionnez le fichier à récupérer</li>
-                                <li>Cliquez sur "Restaurer" ou "Ouvrir"</li>
-                            </ol>
                         </div>
                     </div>
                 </div>
@@ -229,6 +221,10 @@
             <a href="../index.html#contact" class="button button--primary">Contactez-nous</a>
         </div>
     </section>
+    
+    <!-- Séparateur -->
+    <div class="page-separator"></div>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

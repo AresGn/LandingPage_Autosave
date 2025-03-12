@@ -25,9 +25,18 @@
     gap: var(--space-sm);
 }
 
+.header__logo a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+}
+
 .header__logo img {
     height: 2.5rem;
     width: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .header__logo-text {
@@ -35,6 +44,8 @@
     font-weight: 700;
     font-size: var(--font-size-xl);
     color: var(--color-primary);
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .header__nav {

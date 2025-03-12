@@ -222,4 +222,33 @@
         max-width: 300px;
         text-align: center;
     }
+}
+
+/* Séparateur de page */
+.page-separator {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    margin: var(--space-2xl) auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Footer spécifique à la page FAQ */
+.footer {
+    margin-top: var(--space-2xl);
+    position: relative;
+    z-index: 1;
+    border-top: 10px solid var(--color-secondary);
+}
+
+.footer::before {
+    content: '';
+    display: block;
+    height: 20px;
+    background-color: var(--color-background);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
 } 
